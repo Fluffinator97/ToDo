@@ -2,12 +2,14 @@ body {
     margin: 0;
     background-color: #06164d;
     overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 header {
     height: 80px;
-    background-color: red;
-}
+    background: rgb(6,22,77);
+background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
+   }
 
 .mainWrapper{
     display: grid;
@@ -31,10 +33,50 @@ header {
     justify-content: space-between;
 }
 
-.fa-plus {
-    margin: 18.7167px;
+.add_button{
+    background: #06164d;
     color: #F7C6AB;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    padding: 0 1rem;
+    margin-left: 12.5rem;
+}
+
+
+input{
+    width: 92%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    outline: none;
+    border: solid #06164d 0.1rem;
+}
+.create_button{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background: #06164d;
+    color: #F7C6AB;
+    outline: none;
+    border: none;
+    position: relative;
+    top: 5.5rem;
+    left: 13.7rem;
+}
+
+.create_button:hover{
+    background:#F7C6AB;
+    color:#06164d;
+}
+
+
+
+.fa-plus {
+    margin: 1rem 1rem 1rem 0;
+    color: #F7C6AB;
+    font-size: 1rem;
+}
+.fa-plus:hover{
+    color:#F5EEE6;
 }
 
 .myToDo {
@@ -42,8 +84,18 @@ header {
     height: 600.433px;
     background-color: white;
     overflow: scroll;
-
 }
+
+li{
+    list-style: none;
+    font-size: 2rem;
+ 
+    margin-left: -2rem;
+    -webkit-box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
+    -moz-box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
+    box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
+}
+
 
 .myToDoHeader{
     height: 4.2rem;
@@ -75,11 +127,11 @@ header {
 }
 
 .days {
-
     width: 100%;
     height: 9.5rem;
-    background-color: pink;
+    background-color: #F5EEE6;
 }
+
 
 .myToDo::-webkit-scrollbar { width: 0 !important }
 .myToDo { overflow: -moz-scrollbars-none; }
