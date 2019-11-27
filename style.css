@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    background-color: #06164d;
+    overflow: hidden;
+}
+
+header {
+    height: 80px;
+    background-color: red;
+}
+
+.mainWrapper{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: 16rem auto;
+    grid-template-areas:"nTDW cW"
+    "mTD cW";
+}
+
+
+.newToDoWrapper {
+    grid-area: nTDW;
+    background-color: white;
+
+}
+
+.newToDo {
+    display: flex;
+    height: 4.2rem;
+    background-color: #06164d;
+    justify-content: space-between;
+}
+
+.fa-plus {
+    margin: 18.7167px;
+    color: #F7C6AB;
+    font-size: 1.5rem;
+}
+
+.myToDo {
+    grid-area: mTD;
+    height: 600.433px;
+    background-color: white;
+    overflow: scroll;
+
+}
+
+.myToDoHeader{
+    height: 4.2rem;
+    background-color: #06164d;
+    position: sticky;
+    top: 0;
+}
+
+.toDoHeader {
+    color: #F7C6AB;
+    margin: 0;
+    padding: 18.7167px 10px;
+}
+
+.calenderWrapper {
+    grid-area: cW;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    margin: 0 1rem
+    
+}
+
+.weekDays{
+    color: #F7C6AB;
+}
+
+.days {
+
+    width: 100%;
+    height: 9.5rem;
+    background-color: pink;
+}
+
+.myToDo::-webkit-scrollbar { width: 0 !important }
+.myToDo { overflow: -moz-scrollbars-none; }
