@@ -30,7 +30,7 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
     display: flex;
     height: 4.2rem;
     background-color: #06164d;
-    justify-content: space-between;
+    border: none;
 }
 
 .add_button{
@@ -43,24 +43,33 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
     margin-left: 12.5rem;
 }
 
+.todo-list input {
+    display:none;
+}
 
-input{
-    width: 92%;
+.todo-list input + label:before {
+    content: '⬜️';
+    margin-right: 1rem;
+}
+.todo-list input:checked + label:before {
+    content: '🏆';
+}
+
+.add-items input {
+    display: flex;
+    width: 93%;
     padding: 0.8rem;
-    font-size: 1rem;
+    font-size: 2rem;
     outline: none;
-    border: solid #06164d 0.1rem;
 }
 .create_button{
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    background: #06164d;
-    color: #F7C6AB;
-    outline: none;
-    border: none;
+    width: 97%;
+    width:100%;
     position: relative;
-    top: 5.5rem;
-    left: 13.7rem;
+    top: 1.5rem;
+    padding: 0.5rem;
+    border:solid 0.5rem rgb(219, 135, 90);
+    background: white;
 }
 
 .create_button:hover{
@@ -87,9 +96,9 @@ input{
 }
 
 li{
+    padding: 1rem;
     list-style: none;
     font-size: 2rem;
- 
     margin-left: -2rem;
     -webkit-box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
     -moz-box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);

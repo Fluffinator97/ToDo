@@ -20,7 +20,7 @@ function addItem(e) {
     todoList.innerHTML = lists.map((list, i) => {
         return `
             <li> 
-                <input type="checkbox" data-index=${i} id="item${i}" />
+                <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '} />
                 <label for="">${list.text}</label>
             </li>
         `
