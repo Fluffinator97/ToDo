@@ -8,7 +8,7 @@ body {
 header {
     height: 80px;
     background: rgb(6,22,77);
-    background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
+    background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgb(96, 58, 246) 84%);
    }
 
 .mainWrapper{
@@ -63,8 +63,8 @@ header {
 
 .add-items input {
     display: flex;
-    width: 100%;
-    padding: 0.8rem;
+    width: 90%;
+    padding: 0.8rem 0.5rem; 
     font-size: 2rem;
     outline: none;
 }
@@ -73,7 +73,7 @@ header {
     position: relative;
     top: 1.5rem;
     padding: 0.5rem;
-    border:solid 0.5rem rgb(219, 135, 90);
+ 
     background: white;
 }
 
@@ -151,3 +151,9 @@ li label::before{
 
 .myToDo::-webkit-scrollbar { width: 0 !important }
 .myToDo { overflow: -moz-scrollbars-none; }
+
+@media screen and (max-width: 992px) {
+    body {
+    
+    }
+  }
