@@ -8,7 +8,7 @@ body {
 header {
     height: 80px;
     background: rgb(6,22,77);
-background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
+    background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
    }
 
 .mainWrapper{
@@ -18,12 +18,10 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
     grid-template-areas:"nTDW cW"
     "mTD cW";
 }
-
-
 .newToDoWrapper {
     grid-area: nTDW;
     background-color: white;
-
+    width: 100%;
 }
 
 .newToDo {
@@ -31,6 +29,7 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
     height: 4.2rem;
     background-color: #06164d;
     border: none;
+    width: 100%;
 }
 
 .add_button{
@@ -44,12 +43,19 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
 }
 
 .todo-list input {
-    display:none;
+    opacity:0;
+    position: absolute;
+    height: 42px;
+    width: 100%;
+    z-index:100;
+    padding-left:30rem;
 }
 
 .todo-list input + label:before {
     content: '⬜️';
     margin-right: 1rem;
+    position: absolute;
+    width: 100%;
 }
 .todo-list input:checked + label:before {
     content: '🏆';
@@ -57,13 +63,12 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
 
 .add-items input {
     display: flex;
-    width: 93%;
+    width: 100%;
     padding: 0.8rem;
     font-size: 2rem;
     outline: none;
 }
 .create_button{
-    width: 97%;
     width:100%;
     position: relative;
     top: 1.5rem;
@@ -77,8 +82,6 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
     color:#06164d;
 }
 
-
-
 .fa-plus {
     margin: 1rem 1rem 1rem 0;
     color: #F7C6AB;
@@ -91,6 +94,7 @@ background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
 .myToDo {
     grid-area: mTD;
     height: 600.433px;
+    width:100% ;
     background-color: white;
     overflow: scroll;
 }
@@ -103,6 +107,9 @@ li{
     -webkit-box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
     -moz-box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
     box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
+}
+li label::before{
+   padding-left:28rem;
 }
 
 
