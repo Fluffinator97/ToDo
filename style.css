@@ -165,8 +165,8 @@ label::after{
 .myToDo::-webkit-scrollbar { width: 0 !important }
 .myToDo { overflow: -moz-scrollbars-none; }
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
     body {
     
     }
-  }
+  } */
