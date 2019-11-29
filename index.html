@@ -23,17 +23,18 @@
             </div>
 
             <form class="add-items">
-                <input type="text" name="item" placeholder="add todo" required> 
-                <button class="create_button"><input type="submit" value="+ Add Item"></button>
+                <input type="text" placeholder="add todo" id="input" required> 
+                <button class="add_button" onclick="addNewToDo()"></button>
             </form>
         </div>
 
         <div class="myToDo">
+
             <div class="myToDoHeader">
                 <h3 class="toDoHeader">My ToDo</h3>
             </div>
-            <ul class="todo-list">
-                <li>It's empty! You can chillax 😎</li>
+
+            <ul id="list">
             </ul>
         </div>
 

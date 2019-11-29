@@ -1,21 +1,4 @@
 
-const addItems = document.querySelector('.add-items')
-const itemsList = document.querySelector('.todo-list')
-const items = []
-
-function addItem(e) {
-   e.preventDefault()
-  
-       const text = (this.querySelector('[name=item]')).value
-       const item = {
-           text: text,
-           done: false
-       }
-       items.push(item)
-       populateList(items, itemsList)
-       this.reset()
-   }
-
    function populateList(lists = [], todoList) {
     todoList.innerHTML = lists.map((list, i) => {
         return `
@@ -28,4 +11,43 @@ function addItem(e) {
    }
 
 
-addItems.addEventListener('submit', addItem)
+function addNewToDo(){
+    let toDoList = document.createElement('li');
+    let inputValue = document.getElementById('input').value;
+    let text = document.createTextNode(inputValue);
+    
+    
+    
+    toDoList.appendChild(text);
+    
+    
+    if (inputValue === '') {
+      
+    } else {
+      document.getElementById('list').appendChild(toDoList);
+    }
+    document.getElementById('input').value = "";
+ 
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    toDoList.appendChild(span);
+    
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        let div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+  }
+    // delete todos
+ 
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
