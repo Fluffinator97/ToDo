@@ -92,7 +92,7 @@ p{
     grid-area: mTD;
     width:100% ;
     background-color: white;
-    overflow: scroll;
+    /* overflow: scroll; */
     display: block;
     margin-top: 3rem;
 }
@@ -170,3 +170,7 @@ label::after{
     
     }
   } */
+
+  h3{
+      color: pink;
+  }
