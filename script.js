@@ -19,8 +19,9 @@ function addItem(event) {
    }
 
    
-   function populateList(lists = [], todoList) {
+   function populateList(items = [], itemsList) {
     todoList.innerHTML = lists.map((list, i) => {
+        
         return `
             <li> 
                 <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '}  />
@@ -56,8 +57,6 @@ function removeTodoListener(event) {
     removeTodo(todoText)
 }
 /*KOLLA OM DETTA FUNKAR */
-
-
 
 
 addItems.addEventListener('submit', addItem)
