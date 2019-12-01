@@ -162,15 +162,26 @@ label::after{
 }
 
 
-.myToDo::-webkit-scrollbar { width: 0 !important }
-.myToDo { overflow: -moz-scrollbars-none; }
+.myToDo::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
+.myToDo { 
+    overflow: -moz-scrollbars-none; 
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.curentMonthYear{
+    color: yellow;
+}
 
 /* @media screen and (max-width: 992px) {
     body {
     
     }
   } */
-
-  h3{
-      color: pink;
-  }
+ 
