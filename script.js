@@ -1,7 +1,11 @@
-
+// const inputDate = document.querySelector('.add-items')
 const addItems = document.querySelector('.add-items')
 const itemsList = document.querySelector('.todo-list')
 const items = JSON.parse(localStorage.getItem('items')) || []
+
+// function inputDate() {
+//   let inputDate = new Date
+// }
 
 function addItem(event) {
    event.preventDefault()
@@ -58,7 +62,7 @@ function removeTodoListener(event) {
 /*KOLLA OM DETTA FUNKAR */
 
 
-
+// inputDate.addEventListener('date')
 addItems.addEventListener('submit', addItem)
 itemsList.addEventListener('click', toggleDone)
 
