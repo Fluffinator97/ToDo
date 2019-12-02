@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    
     <script src="https://kit.fontawesome.com/2a5340b871.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+    <script defer src="calendar.js"></script>
+ 
 
     <title>ToDo</title>
 </head>
@@ -17,69 +20,49 @@
     <header>
         <h1 class="title">THE BEST TODO</h1>
     </header>
+      
+        <header>    
+            <p id="prev">&#10094;</p>
+            <p id="next">&#10095;</p>
+        </header>
+      
+     
     <div class="mainWrapper">
         <div class="newToDoWrapper">   
 
             <div class="newToDo">
-                <h3 class="toDoHeader">New ToDo </h3>
+                <p id="showDate"></p>
+                <h2 class="toDoHeader">New ToDo </h2>
             </div>
-
+           
             <form class="add-items">
                 <input type="text" placeholder="add todo" id="input" required> 
                 <button class="add_button" onclick="addNewToDo()">Add todo</button>
+                <input type="text" name=s"item" placeholder="add todo" required > 
+                <input type="date">
+                <button class="add_button"><input type="submit" value="+ Add ToDo"></button>
             </form>
         </div>
 
         <div class="myToDo">
 
             <div class="myToDoHeader">
-                <h3 class="toDoHeader">My ToDo</h3>
+                <h2 class="toDoHeader">My ToDo</h2>
             </div>
 
             <ul id="list">
             </ul>
         </div>
-
-            <div class="calenderWrapper">
-                <h3 class="weekDays headerStyling">Måndag</h3>
-                <h3 class="weekDays headerStyling">Måndag</h3>
-                <h3 class="weekDays headerStyling">Måndag</h3>
-                <h3 class="weekDays headerStyling">Måndag</h3>
-                <h3 class="weekDays headerStyling">Måndag</h3>
-                <h3 class="weekDays headerStyling">Måndag</h3>
-                <h3 class="weekDays headerStyling">Måndag</h3>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-                <div class="days"></div>
-        </div>
+     
+    <div class="calenderWrapper">
+        <h2 class="weekDays headerStyling">Måndag</h2>
+        <h2 class="weekDays headerStyling">Tisdag</h2>
+        <h2 class="weekDays headerStyling">Onsdag</h2>
+        <h2 class="weekDays headerStyling">Torsdag</h2>
+        <h2 class="weekDays headerStyling">Fredag</h2>
+        <h2 class="weekDays headerStyling">Lördag</h2>
+        <h2 class="weekDays headerStyling">Söndag</h2>
+    </div>
 </div>
 
 

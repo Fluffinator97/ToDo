@@ -8,7 +8,7 @@ body {
 header {
     height: 80px;
     background: rgb(6,22,77);
-    background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgba(77,33,249,1) 84%);
+    background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgb(96, 58, 246) 84%);
    }
 
    .title {
@@ -17,6 +17,11 @@ header {
        padding-top: 10px;
    }
 
+p{
+    margin-top:1.5rem;
+    color:#06164d;
+    color: #F7C6AB;
+}
 .mainWrapper{
     display: grid;
     grid-template-columns: 3fr 7fr;
@@ -28,8 +33,12 @@ header {
     grid-area: nTDW;
     background-color: white;
     width: 100%;
+    display: block;
+    margin-top: 0.6rem;
 }
-
+::placeholder{
+    color:rgb(96, 58, 246);
+}
 .newToDo {
     display: flex;
     height: 4.2rem;
@@ -56,6 +65,10 @@ header {
     position: absolute;
     height: 42px;
     width: 75%;
+.todo-list input {
+    opacity:0;
+    position: absolute;
+    height: 42px;
     z-index:100;
 }
 
@@ -63,7 +76,6 @@ header {
     content: '⬜️';
     margin-right: 1rem;
     position: absolute;
-    width: 100%;
 }
 #list input:checked + label:before {
     content: '🏆';
@@ -73,6 +85,19 @@ header {
     display: flex;
     font-size: 2rem;
     outline: none;
+}
+    width: 90%;
+    padding: 0.8rem 0.5rem; 
+    font-size: 2rem;
+    outline: none;
+}
+.add_button{
+    width:100%;
+    position: relative;
+    top: 1.5rem;
+    padding: 0.5rem;
+    border: none;
+    background: white;
 }
 
 .add_button:hover{
@@ -91,16 +116,18 @@ header {
 
 .close {
     margin-left: 10rem;
+    padding: 10px;
     cursor: pointer;
     font-size: 20px;
 }
 
 .myToDo {
     grid-area: mTD;
-    height: 600.433px;
     width:100% ;
     background-color: white;
-    overflow: scroll;
+    /* overflow: scroll; */
+    display: block;
+    margin-top: 3rem;
 }
 
 li{
@@ -112,10 +139,17 @@ li{
     -moz-box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
     box-shadow: 8px 15px 33px -18px rgba(6,22,77,1);
 }
-li label::before{
-   margin-left:28rem;
-}
+label::after{
+    margin-left:28rem; 
 
+}
+.todo-list {
+    margin-top: 20px;
+  }
+  
+  .todo-list input {
+    padding-left: 10px;
+  }
 
 .myToDoHeader{
     height: 4.2rem;
@@ -128,6 +162,7 @@ li label::before{
     color: #F7C6AB;
     margin: 0;
     padding: 18.7167px 10px;
+    margin-left: 11rem;
 }
 
 .calenderWrapper {
@@ -152,6 +187,38 @@ li label::before{
     background-color: #F5EEE6;
 }
 
+.currentDay{
+    width: 100%;
+    height: 9.5rem;
+    background-color: #F5EEE6;
+    border: 1rem solid red;
+}
 
-.myToDo::-webkit-scrollbar { width: 0 !important }
-.myToDo { overflow: -moz-scrollbars-none; }
+
+.myToDo::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
+.myToDo { 
+    overflow: -moz-scrollbars-none; 
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.curentMonthYear{
+    color: yellow;
+}
+
+#showDate{
+    color: pink;
+}
+
+/* @media screen and (max-width: 992px) {
+    body {
+    
+    }
+  } */
+ 
