@@ -65,7 +65,7 @@ p{
     font-size: 2rem;
     outline: none;
 }
-.create_button{
+.add_button{
     width:100%;
     position: relative;
     top: 1.5rem;
@@ -74,8 +74,8 @@ p{
     background: white;
 }
 
-.create_button:hover{
-
+.add_button:hover{
+    background:#F7C6AB;
     color:#06164d;
 }
 
@@ -86,6 +86,12 @@ p{
 }
 .fa-plus:hover{
     color:#F5EEE6;
+}
+
+.close {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .myToDo {
