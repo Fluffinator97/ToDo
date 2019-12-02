@@ -1,53 +1,73 @@
+// const inputDate = document.querySelector('.add-items')
+const addItems = document.querySelector('.add-items')
+const itemsList = document.querySelector('.todo-list')
+const items = JSON.parse(localStorage.getItem('items')) || []
 
+// function inputDate() {
+//   let inputDate = new Date
+// }
+
+function addItem(event) {
+   event.preventDefault()
+  
+       const text = (this.querySelector('[name=item]')).value
+       const item = {
+           text: text,
+           done: false
+       }
+  
+       items.push(item)
+       populateList(items, itemsList)
+       localStorage.setItem('items', JSON.stringify(items))
+       this.reset()
+   }
+
+   
    function populateList(lists = [], todoList) {
     todoList.innerHTML = lists.map((list, i) => {
         return `
             <li> 
-                <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '} />
+                <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '}  />
                 <label for="">${list.text}</label>
             </li>
         `
     }).join('')
    }
+/**
+ * @typedef {index} index of data-index
+ * @param {event} event 
+ */
+function toggleDone(event){
+    if(!event.target.matches('input'))return
+    const el = event.target;
+    const index = el.dataset.index;
+    items[index].done = !items[index].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+}
 
 
-function addNewToDo(){
-    let toDoList = document.createElement('li');
-    let inputValue = document.getElementById('input').value;
-    let text = document.createTextNode(inputValue);
-    
-    
-    
-    toDoList.appendChild(text);
-    
-    
-    if (inputValue === '') {
-      
-    } else {
-      document.getElementById('list').appendChild(toDoList);
-    }
-    document.getElementById('input').value = "";
+
+
+/*KOLLA OM DETTA FUNKAR */
+function removeTodoListener(event) {
+    // Remove the li element from the DOM
+    const li = event.target.parentElement
+    li.remove()
+
+    // Also update local storage
+    const todoText = event.target.nextSibling.textContent
+    removeTodo(todoText)
+}
+/*KOLLA OM DETTA FUNKAR */
+
+
+// inputDate.addEventListener('date')
+addItems.addEventListener('submit', addItem)
+itemsList.addEventListener('click', toggleDone)
+
+populateList(items,itemsList)
+
+
+
  
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    toDoList.appendChild(span);
-    
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
-        let div = this.parentElement;
-        div.style.display = "none";
-      }
-    }
-  }
-    // delete todos
- 
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
