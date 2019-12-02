@@ -11,17 +11,13 @@
     <script defer src="script.js"></script>
     <script defer src="calendar.js"></script>
     <script defer src="todo.js"></script>
+    <script defer src="tid.js"></script>
 
  
 
     <title>ToDo</title>
 </head>
 <body>
-
-        <!-- <i class="fas fa-plus"></i> -->
-    <header>
-        <h1 class="title">THE BEST TODO</h1>
-    </header>
       
         <header>    
             <p id="prev">&#10094;</p>
@@ -33,16 +29,12 @@
         <div class="newToDoWrapper">   
 
             <div class="newToDo">
-                <p id="showDate"></p>
-                <h2 class="toDoHeader">New ToDo </h2>
+                <p id="display_date"></p>
+                <h2 class="toDoHeader"> </h2>
             </div>
            
             <form class="add-items">
                 <input type="text" placeholder="add todo" id="input" required> 
-                <button class="add_button" onclick="addNewToDo()">Add todo</button>
-                <input type="text" name=s"item" placeholder="add todo" required > 
-                <input type="date">
-                <button class="add_button"><input type="submit" value="+ Add ToDo"></button>
                 <button class="add_button" onclick="addNewToDo()"></button>
             </form>
         </div>

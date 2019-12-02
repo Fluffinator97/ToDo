@@ -11,15 +11,11 @@ header {
     background: linear-gradient(0deg, rgba(6,22,77,1) 16%, rgb(96, 58, 246) 84%);
    }
 
-   .title {
-       color: #F7C6AB;
-       margin-left: 45%;
-       padding-top: 10px;
-   }
-
 p{
     margin-top:1.5rem;
-    color:#06164d;
+    
+}
+#display_date{
     color: #F7C6AB;
 }
 .mainWrapper{
@@ -47,45 +43,25 @@ p{
     width: 100%;
 }
 
-.add_button{
-    background: #06164d;
-    color: #F7C6AB;
-    font-size: 1rem;
-    outline: none;
-    border: none;
-    padding: 0 1rem;
-    width:20%;
-    position: relative;
-    border:solid 0.5rem rgb(219, 135, 90);
-    background: white;
-}
-
-#list input {
-    opacity:0;
-    position: absolute;
-    height: 42px;
-    width: 75%;
 .todo-list input {
     opacity:0;
     position: absolute;
     height: 42px;
     z-index:100;
+    padding-left:30rem;
 }
 
-#list input + label:before {
+.todo-list input + label:before {
     content: '⬜️';
     margin-right: 1rem;
     position: absolute;
 }
-#list input:checked + label:before {
+.todo-list input:checked + label:before {
     content: '🏆';
 }
 
 .add-items input {
     display: flex;
-    font-size: 2rem;
-    outline: none;
-}
     width: 90%;
     padding: 0.8rem 0.5rem; 
     font-size: 2rem;
@@ -115,7 +91,6 @@ p{
 }
 
 .close {
-    margin-left: 10rem;
     padding: 10px;
     cursor: pointer;
     font-size: 20px;
