@@ -29,6 +29,5 @@ function refreshTime() {
     
      today = currentMonth + ' ' + dd + ', ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
      document.getElementById('display_date').innerHTML = today;
-     setTimeout(refreshTime(), 1000);
     }
-    refreshTime();
+    
