@@ -1,9 +1,26 @@
-// const inputDate = document.querySelector('.add-items')
-const addItems = document.querySelector('.add-items')
-const itemsList = document.querySelector('.todo-list')
-const items = JSON.parse(localStorage.getItem('items')) || []
+const inputDate = document.querySelector('.add-items')
+const addItems = document.querySelector('.add_button')
+const itemsList = document.getElementById('list')
+const local = JSON.parse(localStorage.getItem('local')) || []
 
-]
+function addItem(e) {
+    e.preventDefault();
+    const text = (this.querySelector('[name=item]')).value;
+    const item = {
+      text,
+      done: false
+    };
+
+function populateList(lists = [], todoList) {
+    todoList.innerHTML = lists.map((list, i) => {
+        return `
+            <li> 
+                <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '} />
+                <label for="">${list.text}</label>
+            </li>
+        `
+    }).join('')
+   }
 
 /**
  * @typedef {index} index of data-index
@@ -13,9 +30,10 @@ function toggleDone(event){
     if(!event.target.matches('input'))return
     const el = event.target;
     const index = el.dataset.index;
-    items[index].done = !items[index].done;
-    localStorage.setItem('items', JSON.stringify(items));
-    populateList(items, itemsList);
+    local[index].done = !local[index].done;
+    console.log(item)
+    localStorage.setItem('local', JSON.stringify(local));
+    populateList(local, itemsList);
 }
 
 
@@ -35,11 +53,12 @@ function removeTodoListener(event) {
 
 
 // inputDate.addEventListener('date')
-addItems.addEventListener('submit', addItem)
+addItems.addEventListener('click', addItems)
 itemsList.addEventListener('click', toggleDone)
 
-populateList(items,itemsList)
+populateList(local,itemsList);
 
 
 
- 
+
+

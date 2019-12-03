@@ -13,20 +13,18 @@ let allMonths = [
     "December"
 ]
 
+// function getFullDate(today) {
+//     // let today = new Date()
+//     let day = today.getDate()
+//     let monthNames = today.getMonth();
+//     let year = today.getFullYear()
 
-
-function getFullDate(today) {
-    // let today = new Date()
-    let day = today.getDate()
-    let monthNames = today.getMonth();
-    let year = today.getFullYear()
-
-    return `
-      ${day} ${monthNames[allMonths]} ${year}
-      `
-    console.log(today)
-}
-document.createElement('showDate').innerHTML = getFullDate(new Date())
+//     return `
+//       ${day} ${monthNames[allMonths]} ${year}
+//       `
+//     console.log(today)
+// }
+// document.createElement('showDate').innerHTML = getFullDate(new Date())
 
 
 //   function thisMonth(monthNames){
