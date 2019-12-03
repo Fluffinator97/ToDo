@@ -1,3 +1,4 @@
+window.setInterval(refreshTime, 1000);
 window.onload = refreshTime()
 function refreshTime() {
     let month = new Array("January", "February", "March", "April", "May", "June", "July",    "August", "September", "October", "November", "December");
@@ -28,6 +29,5 @@ function refreshTime() {
     
      today = currentMonth + ' ' + dd + ', ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
      document.getElementById('display_date').innerHTML = today;
-     setInterval(refreshTime(), 1000);
     }
-    refreshTime();
+    
