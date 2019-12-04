@@ -1,22 +1,17 @@
 
-function count(){
-    let ul = document.getElementById('list');
-    let i = 0;
-    let number = 0;
-    while(ul.getElementsByTagName('li')[i++]) number++;
-    document.getElementById("toDoCounter").innerHTML = number;
+function count(){ 
 
-    var innerDiv = document.createElement('div');
-    innerDiv.className = 'toDoCard';
-    dayCard.appendChild(innerDiv);
-
-
+    let elem = document.querySelectorAll('#list li');
+    let visible = [];
+    for (i = 0; i < elem.length; i++) {
+      _this = elem[i];
+      if (_this.offsetParent !== null)
+        visible.push(elem[i]);
     }
+    
+    let counter = visible.length
 
-
-    //put in script.jc         let innerDiv = document.createElement('div');
-        //innerDiv.className = 'toDoCard';
-        //dayCard.appendChild(innerDiv);
-        //.counter {
-    //color: #F7C6AB;}
+    document.getElementById("toDoCounter").innerHTML = counter
+    console.log(counter)
+}
     

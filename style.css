@@ -17,6 +17,17 @@ p{
     color: #F7C6AB;
 }
 
+.toDoCard {
+    background-color: #06164d;
+    height: 30px;
+    width: 30px;
+    margin: 0%;
+}
+
+#toDoCounter {
+
+}
+
 .mainWrapper{
     display: grid;
     grid-template-columns: 3fr 7fr;

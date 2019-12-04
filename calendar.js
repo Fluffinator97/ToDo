@@ -75,6 +75,9 @@ function createCalenderCards() {
         // class="days"
         dayCard.classList = 'days'
         calenderWrapper.appendChild(dayCard)
+        let innerDiv = document.createElement('div');
+        innerDiv.className = 'toDoCard';
+        dayCard.appendChild(innerDiv);
     }
 }
 
@@ -88,7 +91,6 @@ function showCurrentMonthInHeader() {
         }
     }
 }
-
 
 
 
