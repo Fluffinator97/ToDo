@@ -16,13 +16,7 @@
 	<script defer src="tid.js"></script>
   <script defer src="pre_next_year.js"></script>
   <script src="toDoCalender.js"></script>
-
-  <script src="https://kit.fontawesome.com/2a5340b871.js" crossorigin="anonymous"></script>
-  <script defer src="script.js"></script>
-  <script defer src="calendar.js"></script>
-  <script defer src="todo.js"></script>
-  <script defer src="tid.js"></script>
-  <script defer src="pre_next_year.js"></script>
+  <link rel="stylesheet" href="style.css">
 
   <title>ToDo</title>
 </head>
@@ -48,14 +42,15 @@
 
       <form class="add-items">
         <input type="text" placeholder="What do you have ToDo?" id="input" required>
-        <input type="date">
-        <button class="add_button" onclick="addNewToDo()">Add a ToDo</button>
+        <input type="date"> 
+        <button class="add_button" onclick="addNewToDo(), count()">Add a ToDo</button>
       </form>
     </div>
 
     <div class="myToDo">
       <div class="myToDoHeader">
         <h2 class="toDoHeader">My ToDo</h2>
+        <p id="toDoCounter">0</p>
       </div>
 
       <ul id="list"></ul>
