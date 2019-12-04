@@ -16,6 +16,7 @@ p{
 #display_date{
     color: #F7C6AB;
 }
+
 .mainWrapper{
     display: grid;
     grid-template-columns: 3fr 7fr;

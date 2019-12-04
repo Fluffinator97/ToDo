@@ -35,7 +35,7 @@ function removeTodoListener(event) {
 
 
 // inputDate.addEventListener('date')
-addItems.addEventListener('submit', addItem)
+addItems.addEventListener('click', addItem)
 itemsList.addEventListener('click', toggleDone)
 
 populateList(items,itemsList)

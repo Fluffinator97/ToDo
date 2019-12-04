@@ -15,7 +15,8 @@
     <script defer src="calendar.js"></script> 
     <script defer src="todo.js"></script>
 	<script defer src="tid.js"></script>
-	<script defer src="pre_next_year.js"></script>
+  <script defer src="pre_next_year.js"></script>
+  <script src="toDoCalender.js"></script>
 
     <title>ToDo</title>
   </head>
@@ -34,12 +35,13 @@
       <div class="newToDoWrapper">
         <div class="newToDo">
           <p id="display_date"></p>
+          <p class="counter">You have <span id="toDoCounter">0</span> ToDos left</p>
           <h2 class="toDoHeader"></h2>
         </div>
 
         <form class="add-items">
           <input type="text" placeholder="add todo" id="input" required />
-          <button class="add_button" onclick="addNewToDo()"></button>
+          <button class="add_button" onclick="addNewToDo(), count()" >Add todo</button>
         </form>
       </div>
 
@@ -48,7 +50,8 @@
           <h2 class="toDoHeader">My ToDo</h2>
         </div>
 
-        <ul id="list"></ul>
+        <ul id="list"">
+        </ul>
       </div>
 
       <div class="calenderWrapper">
