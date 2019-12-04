@@ -30,22 +30,10 @@ function addNewToDo(){
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
+  span.onclick = function() {
+    toDoList.parentElement.removeChild(toDoList)
+    count()
+  }
   toDoList.appendChild(span);
-  
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      let div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-}
-  // delete todos
 
-  var close = document.getElementsByClassName("close");
-  var i;
-  for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
 }
