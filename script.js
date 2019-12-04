@@ -9,8 +9,8 @@ function addItem(e) {
     const item = {
       text,
       done: false
-    };
-
+    }
+}
 function populateList(lists = [], todoList) {
     todoList.innerHTML = lists.map((list, i) => {
         return `
@@ -53,16 +53,7 @@ function removeTodoListener(event) {
 
 
 // inputDate.addEventListener('date')
-<<<<<<< HEAD
-addItems.addEventListener('click', addItems)
-=======
 addItems.addEventListener('click', addItem)
->>>>>>> 2602865655b4cdb06aa8cdc42c2694f2d8c0aec8
 itemsList.addEventListener('click', toggleDone)
 
-populateList(local,itemsList);
-
-
-
-
-
+populateList(local,itemsList)
