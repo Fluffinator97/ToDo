@@ -53,7 +53,11 @@ function removeTodoListener(event) {
 
 
 // inputDate.addEventListener('date')
+<<<<<<< HEAD
 addItems.addEventListener('click', addItems)
+=======
+addItems.addEventListener('click', addItem)
+>>>>>>> 2602865655b4cdb06aa8cdc42c2694f2d8c0aec8
 itemsList.addEventListener('click', toggleDone)
 
 populateList(local,itemsList);
