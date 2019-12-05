@@ -3,8 +3,6 @@ const addItems = document.querySelector('.add-items')
 const itemsList = document.querySelector('.todo-list')
 const items = JSON.parse(localStorage.getItem('items')) || []
 
-]
-
 /**
  * @typedef {index} index of data-index
  * @param {event} event 
@@ -35,7 +33,7 @@ function removeTodoListener(event) {
 
 
 // inputDate.addEventListener('date')
-addItems.addEventListener('submit', addItem)
+addItems.addEventListener('click', addItem)
 itemsList.addEventListener('click', toggleDone)
 
 populateList(items,itemsList)
