@@ -14,6 +14,10 @@ function addNewToDo(){
   let inputValue = document.getElementById('input').value;
   let text = document.createTextNode(inputValue);
   
+  const todo = {
+    text: inputValue,
+    date: "2019-12-04",
+  }
   
   
   toDoList.appendChild(text);
