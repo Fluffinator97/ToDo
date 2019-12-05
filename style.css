@@ -28,6 +28,13 @@ p{
 
 }
 
+
+
+#next,
+#prev {
+	cursor: pointer;
+}
+
 .mainWrapper{
     display: grid;
     grid-template-columns: 3fr 7fr;
@@ -52,8 +59,6 @@ p{
     border: none;
     width: 100%;
 }
-
-
 
 .todo-list input + label:before {
     content: '⬜️';
@@ -82,9 +87,7 @@ p{
     cursor: pointer;
     color: #F7C6AB;
     transition: all 1.5s;
-    
 }
-
 
 .add_button:hover{
     background:#F7C6AB;
@@ -188,10 +191,6 @@ label::after{
     overflow: -moz-scrollbars-none; 
 }
 
-header{
-    display: flex;
-    justify-content: center;
-}
 
 .curentMonthYear{
     color: #F5EEE6;
@@ -209,25 +208,25 @@ header{
 	padding: 70px 25px;
 	width: 100%;
 	background:#06164d;
-	text-align: center;
+    text-align: center;
+   
 }
 
 .month ul {
 	margin: 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .month ul li {
 	color: white;
 	text-transform: uppercase;
-	letter-spacing: 3px;
+    letter-spacing: 3px;
 }
 /* @media screen and (max-width: 992px) {
     body {
     
     }
   } */
- 
