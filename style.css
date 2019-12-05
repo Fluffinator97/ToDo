@@ -13,6 +13,9 @@ p{
     margin-top:1.5rem;
     
 }
+#next, #prev {
+    color: #F5EEE6;
+}
 #display_date{
     color: #F7C6AB;
     width: 15rem;
@@ -24,8 +27,19 @@ p{
     margin: 0%;
 }
 
+.toDoCounter {
+    height: 1.5rem;
+    background-color: #06164d;
+    text-align: center;
+    color: #F7C6AB;
+    
+    
+}
 #toDoCounter {
-
+    margin: 0;
+    border-top: 1px solid #F7C6AB;
+    
+    
 }
 
 .mainWrapper{
@@ -41,6 +55,7 @@ p{
     width: 100%;
     display: block;
     margin-top: 0.6rem;
+    
 }
 ::placeholder{
     color: #06164d;
@@ -51,9 +66,14 @@ p{
     background-color: #06164d;
     border: none;
     width: 100%;
+    justify-content: center;
+    
     
 }
-
+#list > li {
+    margin-top: 0.7rem;
+    border: 0.5px solid #F7C6AB;
+}
 
 
 .todo-list input + label:before {
@@ -102,9 +122,10 @@ p{
 }
 
 .close {
-    padding: 10px;
+    padding-left: 4rem;
     cursor: pointer;
-    font-size: 20px;
+    float: right;
+    color:#06164d;
 }
 
 .myToDo {
@@ -143,13 +164,14 @@ label::after{
     background-color: #06164d;
     position: sticky;
     top: 0;
+    text-align: center;
 }
 
 .toDoHeader {
     color: #F7C6AB;
     margin: 0;
     padding: 18.7167px 10px;
-    
+    text-align: center;
 }
 
 .calenderWrapper {
@@ -250,12 +272,13 @@ header{
     }
     .add_button {
         width: 80%;
-        margin: 0 6rem; 
+        margin: 0 5rem;
     }
     
     #input {
         border: 1px solid #F7C6AB;
     }
+
     .add-items {
         margin-left: 1rem;
     }
@@ -266,5 +289,29 @@ header{
         justify-content: center;
     }
     
+    
   }  
- 
+ @media screen and (max-width: 742px) {
+    .days{
+        display: none;
+    }
+    .weekDays {
+        display: none;
+    }
+    .myToDo {
+        
+        height: 24.8rem;
+    }
+    #list > li {
+        margin-left: 0.5rem;
+    }
+    .add-items {
+        margin-left: 0.7rem;
+    }
+    .add_button {
+        margin: 0 2.6rem;
+    }
+ }
+ @media screen and (max-width: 469px) {
+    
+ }
