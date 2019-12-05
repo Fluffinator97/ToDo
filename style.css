@@ -13,10 +13,13 @@ p{
     margin-top:1.5rem;
     
 }
+#next, #prev {
+    color: #F5EEE6;
+}
 #display_date{
     color: #F7C6AB;
+    width: 15rem;
 }
-
 .toDoCard {
     background-color: #06164d;
     height: 30px;
@@ -24,8 +27,26 @@ p{
     margin: 0%;
 }
 
+.toDoCounter {
+    height: 1.5rem;
+    background-color: #06164d;
+    text-align: center;
+    color: #F7C6AB;
+    
+    
+}
 #toDoCounter {
+    margin: 0;
+    border-top: 1px solid #F7C6AB;
+    
+    
+}
 
+
+
+#next,
+#prev {
+	cursor: pointer;
 }
 
 .mainWrapper{
@@ -41,6 +62,7 @@ p{
     width: 100%;
     display: block;
     margin-top: 0.6rem;
+    
 }
 ::placeholder{
     color: #06164d;
@@ -51,8 +73,14 @@ p{
     background-color: #06164d;
     border: none;
     width: 100%;
+    justify-content: center;
+    
+    
 }
-
+#list > li {
+    margin-top: 0.9rem;
+    border: 0.5px solid #F7C6AB;
+}
 
 
 .todo-list input + label:before {
@@ -82,9 +110,7 @@ p{
     cursor: pointer;
     color: #F7C6AB;
     transition: all 1.5s;
-    
 }
-
 
 .add_button:hover{
     background:#F7C6AB;
@@ -101,18 +127,20 @@ p{
 }
 
 .close {
-    padding: 10px;
+    padding-left: 4rem;
     cursor: pointer;
-    font-size: 20px;
+    float: right;
+    color:#06164d;
 }
 
 .myToDo {
     grid-area: mTD;
     width:100% ;
     background-color: #F5EEE6;
-    /* overflow: scroll; */
+    overflow: scroll; 
     display: block;
     margin-top: 3rem;
+    height: 24.4rem;
 }
 
 li{
@@ -141,13 +169,14 @@ label::after{
     background-color: #06164d;
     position: sticky;
     top: 0;
+    text-align: center;
 }
 
 .toDoHeader {
     color: #F7C6AB;
     margin: 0;
     padding: 18.7167px 10px;
-    margin-left: 11rem;
+    text-align: center;
 }
 
 .calenderWrapper {
@@ -168,7 +197,7 @@ label::after{
 
 .days {
     width: 100%;
-    height: 7.9rem;
+    height: 6rem;
     background-color: #F5EEE6;
 }
 
@@ -188,15 +217,11 @@ label::after{
     overflow: -moz-scrollbars-none; 
 }
 
-header{
-    display: flex;
-    justify-content: center;
-}
 
 .curentMonthYear{
     color: #F5EEE6;
     font-size: 4rem;
-    margin-top: -1rem;
+    margin-top: -0.5rem;
 }
 
 #showDate{
@@ -206,28 +231,109 @@ header{
 
 
 .month {
-	padding: 70px 25px;
+	padding: 20px 25px;
 	width: 100%;
 	background:#06164d;
-	text-align: center;
+    text-align: center;
+   
 }
 
 .month ul {
 	margin: 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .month ul li {
 	color: white;
 	text-transform: uppercase;
-	letter-spacing: 3px;
+    letter-spacing: 3px;
 }
-/* @media screen and (max-width: 992px) {
-    body {
-    
+@media screen and (max-width: 992px) {
+    * { 
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-  } */
- 
+    body {
+        overflow-y: scroll;
+    }
+    .mainWrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 16rem auto;
+            grid-template-areas:"nTDW"
+                                "mTD"
+                                "cW"
+    }
+    .days{
+        height: 6rem;
+        width: 6rem;
+    }
+    .add_button {
+        width: 80%;
+        margin: 0 5rem;
+    }
+    
+    #input {
+        border: 1px solid #F7C6AB;
+    }
+
+    .add-items {
+        margin-left: 1rem;
+    }
+    .toDoHeader {
+        text-align: center;
+    }
+    .newToDo {
+        justify-content: center;
+    }
+    
+    
+  }  
+ @media screen and (max-width: 742px) {
+    .days{
+        display: none;
+    }
+    .weekDays {
+        display: none;
+    }
+    .myToDo {
+        
+        height: 24.8rem;
+    }
+    #list > li {
+        margin-left: 0.5rem;
+    }
+    .add-items {
+        margin-left: 0.6rem;
+    }
+    .add_button {
+        margin: 0 2.3rem;
+    }
+ }
+ @media screen and (max-width: 469px) {
+    body {
+        box-sizing: border-box;
+    }
+    .curentMonthYear {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+        margin-right: 0.9rem;
+    }
+    #next, #prev {
+        margin-top: 0.7rem;
+        font-size: 1.5rem;
+    }
+    #next {
+        margin-left: 0.6rem;
+    }
+    #prev {
+        margin-right: 0.8rem;
+    }
+    .add_button {
+        margin: 0 1.5rem;
+    }
+}

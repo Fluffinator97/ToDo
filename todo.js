@@ -1,13 +1,13 @@
-function populateList(lists = [], todoList) {
-  todoList.innerHTML = lists.map((list, i) => {
-      return `
-          <li> 
-              <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '} />
-              <label for="">${list.text}</label>
-          </li>
-      `
-  }).join('')
- }
+// function populateList(lists = [], todoList) {
+//   todoList.innerHTML = lists.map((list, i) => {
+//       return `
+//           <li> 
+//               <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '} />
+//               <label for="">${list.text}</label>
+//           </li>
+//       `
+//   }).join('')
+//  }
 
 function addNewToDo(){
   let toDoList = document.createElement('li');
