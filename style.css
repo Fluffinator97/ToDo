@@ -29,10 +29,12 @@ p{
 }
 
 
+
 #next,
 #prev {
 	cursor: pointer;
 }
+
 .mainWrapper{
     display: grid;
     grid-template-columns: 3fr 7fr;
