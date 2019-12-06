@@ -33,7 +33,7 @@ window.addEventListener('load', createCalendar)
 
 function createCalendar() {
     console.log(currentMonth)
-    calenderWrapper.innerHTML = ''
+    /*calenderWrapper.innerHTML = ''*/
     monthInHeader.innerHTML = ''
     createEmptyDateCards()
     createCalenderCards()
@@ -113,12 +113,9 @@ function showCurrentMonthInHeader() {
             thisyear.innerText = year
             thisyear.classList = 'curentMonthYear'
             monthInHeader.appendChild(thisyear)
-
         }
         
     }
 }
-
-
 
 

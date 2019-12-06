@@ -1,5 +1,3 @@
-
-
 function count(){ 
 
     let toDoCounter = document.querySelectorAll('#list li');
