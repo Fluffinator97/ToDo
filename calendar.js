@@ -66,6 +66,7 @@ function createCalenderCards() {
         console.log(todos)
 
         calenderWrapper.appendChild(dayCard)
+
         let innerDiv = document.createElement('div')
         innerDiv.className = 'toDoCard'
         dayCard.appendChild(innerDiv)
@@ -129,7 +130,6 @@ function showCurrentMonthInHeader() {
 
     }
 }
-
 
 
 
