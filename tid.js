@@ -2,13 +2,10 @@ window.setInterval(refreshTime, 1000);
 window.onload = refreshTime()
 function refreshTime() {
     let month = new Array("January", "February", "March", "April", "May", "June", "July",    "August", "September", "October", "November", "December");
-    let dayOfWeek = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
      let today = new Date();
-     let day = today.getDay();
      let dd = today.getDate();
      let mm = today.getMonth();
      let currentMonth = month[mm];
-     let currentDay = dayOfWeek[day];
      let yyyy = today.getFullYear();
     
      let currentTime = new this.Date();
@@ -30,7 +27,7 @@ function refreshTime() {
              seconds = "0" + seconds;
          }
     
-     today = currentDay + '<br>' + currentMonth + ' ' + dd + ', ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
+     today = dd + ' ' + currentMonth + ' ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
      document.getElementById('display_date').innerHTML = today;
     }
     

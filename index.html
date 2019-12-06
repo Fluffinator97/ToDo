@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/2a5340b871.js"
       crossorigin="anonymous"
-    ></script>
-     <script defer src="script.js"></script>
-    <script defer src="calendar.js"></script> 
-    <script defer src="todo.js"></script>
+    ></script> -->
+     <!-- <script defer src="script.js"></script> -->
+  <script defer src="calendar.js"></script> 
+  <script defer src="todo.js"></script>
 	<script defer src="tid.js"></script>
-  <script defer src="pre_next_year.js"></script>
   <script src="toDoCalender.js"></script>
   <link rel="stylesheet" href="style.css">
 
@@ -27,7 +26,7 @@
     <div class="month">
       <ul>
         <li id="prev">&#10094;</li>
-        <header></header>
+        <h1></h1>
         <li id="next">&#10095;</li>
       </ul>
     </div>
@@ -36,14 +35,13 @@
   <div class="mainWrapper">
     <div class="newToDoWrapper">
       <div class="newToDo">
-        
-        
-      <p id="display_date"></p>
+        <p id="display_date"></p>
+        <h2 class="toDoHeader"></h2>
       </div>
 
       <form class="add-items">
         <input type="text" placeholder="What do you have ToDo?" id="input" required>
-        <input type="date" id="input"> 
+        <input id="input_date" type="date"> 
         <button class="add_button" onclick="addNewToDo(), count()">Add a ToDo</button>
       </form>
     </div>
@@ -51,24 +49,12 @@
     <div class="myToDo">
       <div class="myToDoHeader">
         <h2 class="toDoHeader">My ToDo</h2>
-        <div class="toDoCounter">
-          <p id="toDoCounter">0</p>
-        </div>
+        <p id="toDoCounter">0</p>
       </div>
-      <div class="toDoListContainer">
-        <ul id="list"></ul>
-      </div>
-    </div>
 
-    <div class="calenderWrapper">
-      <h2 class="weekDays">Måndag</h2>
-      <h2 class="weekDays">Tisdag</h2>
-      <h2 class="weekDays">Onsdag</h2>
-      <h2 class="weekDays">Torsdag</h2>
-      <h2 class="weekDays">Fredag</h2>
-      <h2 class="weekDays">Lördag</h2>
-      <h2 class="weekDays">Söndag</h2>
+      <ul id="list"></ul>
     </div>
+    <div class="calenderWrapper">
   </div>
 </body>
 

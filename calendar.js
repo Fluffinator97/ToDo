@@ -13,54 +13,35 @@ let allMonths = [
     "December"
 ]
 
-
-
-function getFullDate(today) {
-    // let today = new Date()
-    let day = today.getDate()
-    let monthNames = today.getMonth();
-    let year = today.getFullYear()
-
-    return `
-      ${day} ${monthNames[allMonths]} ${year}
-      `
-    console.log(today)
-}
-document.createElement('showDate').innerHTML = getFullDate(new Date())
-
-
-//   function thisMonth(monthNames){
-//       let month = date.getMonth()
-
-//       return `
-//       ${ monthNames[month]}
-//       `
-//   }    
-//     document.querySelector('.month').innerHTML = thisMonth(new Date() )
-
-
-
 let today = new Date()
-let currentMonth = today.getMonth();
+let thisDay = today.getDate()
+let currentMonth = today.getMonth()
 let lastDayOfMonth = new Date(today.getFullYear(), currentMonth + 1, 0)
-let year = today.getFullYear();
+console.log("date : ", lastDayOfMonth)
+console.log("sueernt month: ", currentMonth)
+let year = today.getFullYear()
 let daysInCurrentMonth = lastDayOfMonth.getDate()
-let startingWeekDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDay()
+let startingWeekDayOfMonth = new Date(today.getFullYear(), currentMonth, 0).getDay()
 
 const calenderWrapper = document.querySelector('.calenderWrapper')
-const header = document.querySelector('header')
+const monthInHeader = document.querySelector('h1')
+// const yearsInHeader = document.querySelector('p')
 
 
 window.addEventListener('load', createCalendar)
 
 
 function createCalendar() {
+    console.log(currentMonth)
+    calenderWrapper.innerHTML = ''
+    monthInHeader.innerHTML = ''
     createEmptyDateCards()
     createCalenderCards()
     showCurrentMonthInHeader()
 }
 
-function createEmptyDateCards() {   
+function createEmptyDateCards() {
+    startingWeekDayOfMonth = new Date(today.getFullYear(), currentMonth, 0).getDay()
     for (let i = 0; i < startingWeekDayOfMonth; i++) {
         let dayCard = document.createElement('div')
         dayCard.classList = 'days'
@@ -69,28 +50,87 @@ function createEmptyDateCards() {
 }
 
 function createCalenderCards() {
+    lastDayOfMonth = new Date(today.getFullYear(), currentMonth + 1, 0)
+    daysInCurrentMonth = lastDayOfMonth.getDate()
+    console.log("daysInCurrentMonth: ", daysInCurrentMonth)
+    console.log("lastDayOfMonth: ", lastDayOfMonth)
     for (let i = 1; i <= daysInCurrentMonth; i++) {
         let dayCard = document.createElement('div')
         dayCard.innerText = i
         // class="days"
         dayCard.classList = 'days'
+        let thismonth = currentMonth + 1
+        let dayswithzero = i <= 9 ? "0" + i : i;
+        let dateToGetLocalStorage = year + "-" + thismonth + "-" + dayswithzero
+        let todos = JSON.parse(localStorage.getItem(dateToGetLocalStorage) || '[]')
+        console.log(dateToGetLocalStorage, todos)
+
         calenderWrapper.appendChild(dayCard)
-        let innerDiv = document.createElement('div');
-        innerDiv.className = 'toDoCard';
-        dayCard.appendChild(innerDiv);
+        
+        if (todos.length > 0) {
+            let innerDiv = document.createElement('div')
+            innerDiv.className = 'toDoCard'
+            dayCard.appendChild(innerDiv)
+
+            console.log(todos)
+            innerDiv.innerText = todos.length
+        }
+
     }
 }
 
+
+function nextMonth() {
+    if (currentMonth === 11) {
+        year = year + 1
+    } else {
+        year = year
+    }
+
+    if (currentMonth === 11) {
+        currentMonth = 0
+    } else {
+        currentMonth = currentMonth + 1
+    }
+    createCalendar()
+}
+document.getElementById('next').addEventListener("click", nextMonth)
+
+function prevMonth() {
+    if (currentMonth === 0) {
+        year = year - 1
+    } else {
+        year = year
+    }
+
+    if (currentMonth === 0) {
+        currentMonth = 11
+    } else {
+        currentMonth = currentMonth - 1
+    }
+    createCalendar(currentMonth)
+}
+document.getElementById('prev').addEventListener("click", prevMonth)
+
+
+
 function showCurrentMonthInHeader() {
     for (let i = 0; i <= daysInCurrentMonth; i++) {
-        if (i === currentMonth) {
+        if (i === (currentMonth)) {
             let month = document.createElement('h1')
+            let thisyear = document.createElement('h1')
             month.innerText = allMonths[i]
             month.classList = 'curentMonthYear'
-            header.appendChild(month)
+            monthInHeader.appendChild(month)
+            thisyear.innerText = year
+            thisyear.classList = 'curentMonthYear'
+            monthInHeader.appendChild(thisyear)
+
         }
+
     }
 }
+
 
 
 
