@@ -1,8 +1,3 @@
-<<<<<<< #31_växla_mellan_månader
-window.onload = count();
-
-=======
->>>>>>> master
 function count(){ 
 
     let toDoCounter = document.querySelectorAll('#list li');
