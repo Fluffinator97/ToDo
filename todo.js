@@ -1,21 +1,13 @@
-
-let toDos = {
-  '2019-12-04': ['laga mat', 'dansa med barnen'],
-
-}
-
-
 function addTodoFromLocaStorage(){
   let keys = Object.keys(localStorage);
   console.log("keys: ",keys);
 
   for(key of keys){
     const todos = JSON.parse(localStorage.getItem(key) || "[]")
-    console.log(todos)
     for (const todo of todos) {
       let toDoList = document.createElement('li')
       let span = document.createElement("SPAN")
-      var txt = document.createTextNode("\u00D7")
+      let txt = document.createTextNode("\u00D7")
       span.className = "close"
       span.appendChild(txt)
       
@@ -48,8 +40,8 @@ function addNewToDo(){
   }
   document.getElementById('input').value = ""
 
-  var span = document.createElement("SPAN")
-  var txt = document.createTextNode("\u00D7")
+  const span = document.createElement("SPAN")
+  const txt = document.createTextNode("\u00D7")
   span.className = "close"
   span.appendChild(txt)
   toDoList.appendChild(span)
@@ -70,7 +62,7 @@ function addNewToDo(){
   close[i].onclick = function() {
     let div = this.parentElement
     div.style.display = "none"
-    var re = new RegExp('[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])');
+    let re = new RegExp('[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])');
     let todoremoveItem = div.innerText.match(re)
    // console.log(todoremoveItem[0])
     localStorage.removeItem(todoremoveItem[0])
