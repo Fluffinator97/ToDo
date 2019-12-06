@@ -30,7 +30,11 @@ function refreshTime() {
              seconds = "0" + seconds;
          }
     
+<<<<<<< #31_växla_mellan_månader
+     today = dd + ' ' + currentMonth + ' ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
+=======
      today = currentDay + '<br>' + currentMonth + ' ' + dd + ', ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
+>>>>>>> master
      document.getElementById('display_date').innerHTML = today;
     }
     

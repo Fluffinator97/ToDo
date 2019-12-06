@@ -12,9 +12,9 @@
     ></script> -->
      <!-- <script defer src="script.js"></script> -->
     <script defer src="calendar.js"></script> 
-    <script defer src="todo.js"></script>
-	<script defer src="tid.js"></script>
-
+  <script defer src="todo.js"></script>
+  <script defer src="tid.js"></script>
+  <script src="script.js"></script>
   <script src="toDoCalender.js"></script>
   <link rel="stylesheet" href="style.css">
 
@@ -27,7 +27,7 @@
     <div class="month">
       <ul>
         <li id="prev">&#10094;</li>
-       <header></header>
+        <h1></h1>
         <li id="next">&#10095;</li>
       </ul>
     </div>
@@ -43,7 +43,10 @@
 
       <form class="add-items">
         <input type="text" placeholder="What do you have ToDo?" id="input" required>
-        <input type="date" id="input"> 
+<<<<<<< #31_växla_mellan_månader
+        <input id="input_date" type="date"> 
+        <!--<input type="date" id="input">-->
+>>>>>>> master
         <button class="add_button" onclick="addNewToDo(), count()">Add a ToDo</button>
       </form>
     </div>
@@ -60,7 +63,7 @@
       </div>
     </div>
 
-    <div class="calenderWrapper">
+    <div class="weekDaysHeader">
       <h2 class="weekDays">Måndag</h2>
       <h2 class="weekDays">Tisdag</h2>
       <h2 class="weekDays">Onsdag</h2>
@@ -68,6 +71,9 @@
       <h2 class="weekDays">Fredag</h2>
       <h2 class="weekDays">Lördag</h2>
       <h2 class="weekDays">Söndag</h2>
+    </div>
+    <div class="calenderWrapper">
+
     </div>
   </div>
 </body>

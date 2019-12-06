@@ -1,14 +1,69 @@
+const inputDate = document.querySelector('.add-items')
+const addItems = document.querySelector('.add_button')
+const itemsList = document.getElementById('list')
+const local = JSON.parse(localStorage.getItem('local')) || []
 
-// const inputDate = document.querySelector('.add-items')
+function addItem(e) {
+    e.preventDefault();
+    const text = (this.querySelector('[name=item]')).value;
+    const item = {
+      text: text,
+      done: false,
+      date: '2019-12-04'
+    }
+}
+function populateList(lists = [], todoList) {
+    todoList.innerHTML = lists.map((list, i) => {
+        return `
+            <li> 
+                <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '} />
+                <label for="">${list.text}</label>
+            </li>
+        `
+    }).join('')
+   }
+
+
+<<<<<<< #31_växla_mellan_månader
+=======
 const addItems = document.querySelector('.add-items')
 const itemsList = document.querySelector('.todo-list')
-const items = JSON.parse(localStorage.getItem('items')) || []
+const items = []
+
+function addItem(e) {
+   e.preventDefault()
+
+       const text = (this.querySelector('[name=item]')).value
+       const item = {
+           text: text,
+           done: false
+       }
+       items.push(item)
+       populateList(items, itemsList)
+       this.reset()
+   }
+
+   function populateList(lists = [], todoList) {
+    todoList.innerHTML = lists.map((list, i) => {
+        return `
+            <li> 
+                <input type="checkbox" data-index=${i} id="item${i}" />
+                <label for="">${list.text}</label>
+            </li>
+        `
+    }).join('')
+   }
+
+
+addItems.addEventListener('submit', addItem) 
 
 
 /**
  * @typedef {index} index of data-index
  * @param {event} event 
  */
+
+>>>>>>> master
 function toggleDone(event){
     if(!event.target.matches('input'))return
     const el = event.target;
