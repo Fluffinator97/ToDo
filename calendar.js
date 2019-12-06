@@ -62,18 +62,18 @@ function createCalenderCards() {
         let thismonth = currentMonth + 1
         let dayswithzero = i <= 9 ? "0" + i : i;
         let dateToGetLocalStorage = year + "-" + thismonth + "-" + dayswithzero
-        let todos = localStorage.getItem(dateToGetLocalStorage)
-        console.log(todos)
+        let todos = JSON.parse(localStorage.getItem(dateToGetLocalStorage) || '[]')
+        console.log(dateToGetLocalStorage, todos)
 
         calenderWrapper.appendChild(dayCard)
+        
+        if (todos.length > 0) {
+            let innerDiv = document.createElement('div')
+            innerDiv.className = 'toDoCard'
+            dayCard.appendChild(innerDiv)
 
-        let innerDiv = document.createElement('div')
-        innerDiv.className = 'toDoCard'
-        dayCard.appendChild(innerDiv)
-
-        if (todos != null) {
             console.log(todos)
-            innerDiv.innerText += 1
+            innerDiv.innerText = todos.length
         }
 
     }
@@ -125,9 +125,12 @@ function showCurrentMonthInHeader() {
             thisyear.innerText = year
             thisyear.classList = 'curentMonthYear'
             monthInHeader.appendChild(thisyear)
+
         }
 
     }
 }
+
+
 
 
