@@ -55,6 +55,7 @@ function addNewToDo(){
       div.style.display = "none"
     }
   }
+  location.reload();
 }
   // delete todos
 
@@ -67,6 +68,6 @@ function addNewToDo(){
     let todoRemoveItem = div.innerText.match(re)
     // console.log(todoremoveItem[0])
     localStorage.removeItem(key)
-    
+    location.reload();
   }
 }

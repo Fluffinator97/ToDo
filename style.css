@@ -266,7 +266,7 @@ header{
 	text-transform: uppercase;
 	letter-spacing: 3px;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1025px) {
     * { 
         margin: 0;
         padding: 0;
