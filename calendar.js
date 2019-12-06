@@ -113,12 +113,9 @@ function showCurrentMonthInHeader() {
             thisyear.innerText = year
             thisyear.classList = 'curentMonthYear'
             monthInHeader.appendChild(thisyear)
-
         }
         
     }
 }
-
-
 
 
