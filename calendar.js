@@ -33,7 +33,7 @@ window.addEventListener('load', createCalendar)
 
 function createCalendar() {
     console.log(currentMonth)
-    /*calenderWrapper.innerHTML = ''*/
+    calenderWrapper.innerHTML = ''
     monthInHeader.innerHTML = ''
     createEmptyDateCards()
     createCalenderCards()

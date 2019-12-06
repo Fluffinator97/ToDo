@@ -27,6 +27,17 @@ p{
     margin: 0%;
 }
 
+.weekDaysHeader {
+    grid-area: cW;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    margin: 0 1rem
+}
+
 .toDoCounter {
     height: 1.5rem;
     background-color: #06164d;
@@ -198,7 +209,7 @@ label::after{
     justify-items: center;
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
-    margin: 0 1rem
+    margin: 5rem 1rem
     
 }
 
