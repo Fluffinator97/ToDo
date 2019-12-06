@@ -22,6 +22,7 @@ p{
 
 .toDoCard {
     background-color: #06164d;
+    color: white;
     height: 30px;
     width: 30px;
     margin: 0%;
@@ -47,6 +48,8 @@ p{
     
 }
 
+<<<<<<< #31_växla_mellan_månader
+=======
 #toDoCounter {
     margin: 0;
     border-top: 1px solid #F7C6AB;
@@ -58,7 +61,6 @@ p{
 #prev {
 	cursor: pointer;
 }
-
 .mainWrapper{
     display: grid;
     grid-template-columns: 3fr 7fr;
@@ -267,6 +269,7 @@ label::after{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    justify-content: center;	
 }
 
 .month ul li {

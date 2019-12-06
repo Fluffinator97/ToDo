@@ -24,7 +24,7 @@ let daysInCurrentMonth = lastDayOfMonth.getDate()
 let startingWeekDayOfMonth = new Date(today.getFullYear(), currentMonth, 0).getDay()
 
 const calenderWrapper = document.querySelector('.calenderWrapper')
-const monthInHeader = document.querySelector('header')
+const monthInHeader = document.querySelector('h1')
 // const yearsInHeader = document.querySelector('p')
 
 
@@ -53,48 +53,60 @@ function createCalenderCards() {
     lastDayOfMonth = new Date(today.getFullYear(), currentMonth + 1, 0)
     daysInCurrentMonth = lastDayOfMonth.getDate()
     console.log("daysInCurrentMonth: ", daysInCurrentMonth)
+    console.log("lastDayOfMonth: ", lastDayOfMonth)
     for (let i = 1; i <= daysInCurrentMonth; i++) {
         let dayCard = document.createElement('div')
         dayCard.innerText = i
         // class="days"
         dayCard.classList = 'days'
+        let thismonth = currentMonth + 1
+        let dayswithzero = i <= 9 ? "0" + i : i;
+        let dateToGetLocalStorage = year + "-" + thismonth + "-" + dayswithzero
+        let todos = localStorage.getItem(dateToGetLocalStorage)
+        console.log(todos)
+
         calenderWrapper.appendChild(dayCard)
 
         let innerDiv = document.createElement('div')
         innerDiv.className = 'toDoCard'
         dayCard.appendChild(innerDiv)
 
+        if (todos != null) {
+            console.log(todos)
+            innerDiv.innerText += 1
+        }
+
     }
 }
 
 
 function nextMonth() {
-    if(currentMonth === 11){
-        year = year +1
-    }else{
+    if (currentMonth === 11) {
+        year = year + 1
+    } else {
         year = year
     }
 
-    if(currentMonth === 11){
+    if (currentMonth === 11) {
         currentMonth = 0
-    }else{
-        currentMonth = currentMonth +1
+    } else {
+        currentMonth = currentMonth + 1
     }
-   createCalendar()
+    createCalendar()
 }
 document.getElementById('next').addEventListener("click", nextMonth)
 
 function prevMonth() {
-    if(currentMonth === 0){
-        year = year-1
-    } else{
+    if (currentMonth === 0) {
+        year = year - 1
+    } else {
         year = year
     }
 
-    if(currentMonth === 0){
+    if (currentMonth === 0) {
         currentMonth = 11
-    } else{
-        currentMonth = currentMonth-1
+    } else {
+        currentMonth = currentMonth - 1
     }
     createCalendar(currentMonth)
 }
@@ -114,7 +126,7 @@ function showCurrentMonthInHeader() {
             thisyear.classList = 'curentMonthYear'
             monthInHeader.appendChild(thisyear)
         }
-        
+
     }
 }
 
