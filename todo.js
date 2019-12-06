@@ -1,3 +1,4 @@
+<<<<<<< #31_växla_mellan_månader
 
 function addTodoFromLocaStorage(){
   let keys = Object.keys(localStorage);
@@ -29,6 +30,29 @@ function addNewToDo(){
   let date = document.getElementById('input_date').value
 
   localStorage.setItem(date, inputValue)
+=======
+// function populateList(lists = [], todoList) {
+//   todoList.innerHTML = lists.map((list, i) => {
+//       return `
+//           <li> 
+//               <input type="checkbox" data-index=${i} id="item${i}" ${list.done ? 'checked' : ' '} />
+//               <label for="">${list.text}</label>
+//           </li>
+//       `
+//   }).join('')
+//  }
+
+function addNewToDo(){
+  let toDoList = document.createElement('li');
+  let inputValue = document.getElementById('input').value;
+  let text = document.createTextNode(inputValue);
+  
+  const todo = {
+    text: inputValue,
+    date: "2019-12-04",
+  }
+  
+>>>>>>> master
   
   toDoList.appendChild(text)
   
@@ -40,6 +64,7 @@ function addNewToDo(){
   }
   document.getElementById('input').value = ""
 
+<<<<<<< #31_växla_mellan_månader
   var span = document.createElement("SPAN")
   var txt = document.createTextNode("\u00D7")
   span.className = "close"
@@ -53,10 +78,19 @@ function addNewToDo(){
       let div = this.parentElement
       div.style.display = "none"
     }
+=======
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  span.onclick = function() {
+    toDoList.parentElement.removeChild(toDoList)
+    count()
+>>>>>>> master
   }
-}
-  // delete todos
+  toDoList.appendChild(span);
 
+<<<<<<< #31_växla_mellan_månader
   let close = document.getElementsByClassName("close")
   for (let i = 0; i < close.length; i++) {
   close[i].onclick = function() {
@@ -67,4 +101,6 @@ function addNewToDo(){
    // console.log(todoremoveItem[0])
     localStorage.removeItem(todoremoveItem[0])
   }
+=======
+>>>>>>> master
 }
