@@ -19,6 +19,7 @@ p{
 
 .toDoCard {
     background-color: #06164d;
+    color: white;
     height: 30px;
     width: 30px;
     margin: 0%;
@@ -216,6 +217,7 @@ label::after{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    justify-content: center;	
 }
 
 .month ul li {

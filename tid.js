@@ -27,7 +27,7 @@ function refreshTime() {
              seconds = "0" + seconds;
          }
     
-     today = currentMonth + ' ' + dd + ', ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
+     today = dd + ' ' + currentMonth + ' ' + yyyy + '  |  ' + hour + ' : ' + minutes + ' : ' + seconds;
      document.getElementById('display_date').innerHTML = today;
     }
     

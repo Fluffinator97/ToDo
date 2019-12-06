@@ -7,8 +7,9 @@ function addItem(e) {
     e.preventDefault();
     const text = (this.querySelector('[name=item]')).value;
     const item = {
-      text,
-      done: false
+      text: text,
+      done: false,
+      date: '2019-12-04'
     }
 }
 function populateList(lists = [], todoList) {
@@ -22,10 +23,7 @@ function populateList(lists = [], todoList) {
     }).join('')
    }
 
-/**
- * @typedef {index} index of data-index
- * @param {event} event 
- */
+
 function toggleDone(event){
     if(!event.target.matches('input'))return
     const el = event.target;
