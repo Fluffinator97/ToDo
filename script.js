@@ -1,7 +1,9 @@
+
 // const inputDate = document.querySelector('.add-items')
 const addItems = document.querySelector('.add-items')
 const itemsList = document.querySelector('.todo-list')
 const items = JSON.parse(localStorage.getItem('items')) || []
+
 
 /**
  * @typedef {index} index of data-index
@@ -11,9 +13,10 @@ function toggleDone(event){
     if(!event.target.matches('input'))return
     const el = event.target;
     const index = el.dataset.index;
-    items[index].done = !items[index].done;
-    localStorage.setItem('items', JSON.stringify(items));
-    populateList(items, itemsList);
+    local[index].done = !local[index].done;
+    console.log(item)
+    localStorage.setItem('local', JSON.stringify(local));
+    populateList(local, itemsList);
 }
 
 
@@ -36,8 +39,4 @@ function removeTodoListener(event) {
 addItems.addEventListener('click', addItem)
 itemsList.addEventListener('click', toggleDone)
 
-populateList(items,itemsList)
-
-
-
- 
+populateList(local,itemsList)
