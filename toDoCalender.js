@@ -1,4 +1,4 @@
-
+window.onload = count();
 
 function count(){ 
 
